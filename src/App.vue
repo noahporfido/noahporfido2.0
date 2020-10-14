@@ -5,9 +5,15 @@
 </template>
 
 <style lang="scss">
+@import "./assets/styles/_general.scss";
+@import "./assets/styles/reset.css";
+
 * {
-  box-sizing: border-box;
-  margin: 0;
+  color: $text-color;
+}
+
+body {
+  background-color: $body-color;
 }
 
 #app {

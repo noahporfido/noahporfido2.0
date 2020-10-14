@@ -12,7 +12,7 @@
 <script></script>
 
 <style lang="scss" scoped>
-// @import "../../../assets/styles/_generals.scss";
+@import "../../assets/styles/_general.scss";
 
 .viewContainer-top {
   height: calc(100vh - 80px);
@@ -37,7 +37,7 @@
       animation: reveal 2s;
       overflow: hidden;
       max-width: 700px;
-      border-left: 1px solid black;
+      border-left: 1px solid $text-color;
 
       h2 {
         animation: slidein 2s;
