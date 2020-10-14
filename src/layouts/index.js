@@ -1,0 +1,1 @@
+export { default as FullpageLayout } from './Fullpage.vue'
