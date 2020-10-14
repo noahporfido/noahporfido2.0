@@ -1,22 +1,28 @@
 <template>
   <div class="fullpage-layout-container">
     <full-page ref="fullpage" :options="options" id="fullpage">
-      <div class="section">First section ...</div>
+      <div class="section">
+        <Home></Home>
+      </div>
+      <div class="section">Second section ...</div>
       <div class="section">Second section ...</div>
     </full-page>
   </div>
 </template>
 
 <script>
+import { Home } from "@/components/sections";
+
 export default {
   name: "Fullpage",
+  components: { Home },
   data() {
     return {
       options: {
-        licenseKey: "YOUR_KEY_HEERE",
+        licenseKey: "YOUR_KEY_HERE",
         menu: "#menu",
-        anchors: ["page1", "page2", "page3"],
-        sectionsColor: ["#41b883", "#ff5f45", "#0798ec"],
+        anchors: ["noah", "about", "projects"],
+        navigation: true,
       },
     };
   },
