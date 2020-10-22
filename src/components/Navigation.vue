@@ -34,7 +34,24 @@ export default {
       cursor: pointer;
       padding: $md-pd;
       font-size: $title-md;
+      animation: 1s slideIn;
+      &:nth-of-type(2) {
+        animation-duration: 1.3s;
+      }
+      &:nth-of-type(3) {
+        animation-duration: 1.6s;
+      }
     }
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    margin-top: 50px;
+  }
+
+  100% {
+    margin-top: 0;
   }
 }
 </style>
