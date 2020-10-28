@@ -2,7 +2,7 @@
   <div class="navigation-container">
     <ul>
       <li @click="scrollToSection('#home')">Home</li>
-      <li @click="scrollToSection('#about')">About</li>
+      <li @click="scrollToSection('#about')">About Me</li>
       <li @click="scrollToSection('#projects')">Projects</li>
     </ul>
   </div>
@@ -25,6 +25,7 @@ export default {
   z-index: 2;
   position: fixed;
   width: 100%;
+  padding-right: 4%;
   ul {
     display: flex;
     justify-content: flex-end;

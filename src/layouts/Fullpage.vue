@@ -26,6 +26,8 @@ export default {
         licenseKey: "YOUR_KEY_HERE",
         menu: "#menu",
         anchors: ["home", "about", "projects"],
+        navigation: true,
+        navigationPosition: "right",
       },
     };
   },
