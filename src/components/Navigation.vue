@@ -1,9 +1,12 @@
 <template>
-  <div class="navigation-container">
+  <div
+    v-if="$route.hash && $route.hash !== '#home'"
+    class="navigation-container"
+  >
     <ul>
-      <li @click="scrollToSection('#home')">Home</li>
-      <li @click="scrollToSection('#about')">About Me</li>
-      <li @click="scrollToSection('#projects')">Projects</li>
+      <li @click="scrollToSection('#home')">home</li>
+      <li @click="scrollToSection('#about')">about me</li>
+      <li @click="scrollToSection('#projects')">projects</li>
     </ul>
   </div>
 </template>
@@ -12,6 +15,7 @@
 export default {
   methods: {
     scrollToSection(hash) {
+      console.log(this.$route.hash);
       location.href = hash;
     },
   },
@@ -32,10 +36,19 @@ export default {
     list-style-type: none;
 
     li {
+      font-weight: 700;
       cursor: pointer;
       padding: $md-pd;
       font-size: $title-md;
+      transition: all 0.5s ease;
       animation: 1s slideIn;
+
+      &:hover {
+        background: linear-gradient(to right, #6c63ff, rgb(0, 204, 255));
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
       &:nth-of-type(2) {
         animation-duration: 1.3s;
       }

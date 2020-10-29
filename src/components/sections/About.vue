@@ -116,11 +116,11 @@
           />
         </g>
       </svg>
-      <p>
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-        eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-        voluptua. At vero eos et accusam et justo duo dolores et ea
-      </p>
+      <div>
+        <p>build</p>
+        <p>design</p>
+        <p>create</p>
+      </div>
     </div>
   </div>
 </template>
@@ -143,9 +143,11 @@ export default {};
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    justify-content: space-evenly;
 
-    p {
-      width: 50%;
+    P {
+      text-align: left;
+      font-size: $title-lg;
     }
 
     svg {
@@ -165,7 +167,7 @@ export default {};
   }
 
   to {
-    transform: translate(25px, -15px);
+    transform: translate(26px, -14px);
     opacity: 1;
   }
 }

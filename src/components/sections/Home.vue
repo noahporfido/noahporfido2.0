@@ -6,10 +6,24 @@
         <h2>frontend developer</h2>
       </div>
     </div>
+    <div class="start-tour-container">
+      <h1 @click="start">Get to Know me</h1>
+    </div>
   </div>
 </template>
 
-<script></script>
+<script>
+export default {
+  created() {
+    console.log(this.$route.hash === "" || "#home");
+  },
+  methods: {
+    start() {
+      location.href = "#about";
+    },
+  },
+};
+</script>
 
 <style lang="scss" scoped>
 @import "../../assets/styles/_general.scss";
@@ -21,6 +35,36 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+
+  .start-tour-container {
+    position: absolute;
+    bottom: 0;
+    opacity: 0;
+    border-radius: 16px;
+    animation-name: topToBottom;
+    animation-duration: 1s;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+
+    h1 {
+      cursor: pointer;
+      font-size: $title-sm;
+      position: relative;
+
+      &:hover::after {
+        animation: borderSpin 0.6s;
+        width: 0;
+        content: "";
+        animation-fill-mode: forwards;
+        border-bottom: 1px solid black;
+        position: absolute;
+        bottom: -5px;
+        height: 5px;
+        left: 0;
+      }
+    }
+  }
 
   .wrapper {
     width: 90%;
@@ -46,23 +90,41 @@
   }
 }
 
+@keyframes borderSpin {
+  to {
+    transform: rotate(180deg);
+    width: 100%;
+  }
+}
+
 @keyframes showup {
-  0% {
+  from {
     opacity: 0;
   }
 
-  100% {
+  to {
     opacity: 1;
   }
 }
 
 @keyframes slidein {
-  0% {
+  from {
     margin-left: -800px;
   }
 
-  100% {
+  to {
     margin-left: -10px;
+  }
+}
+
+@keyframes topToBottom {
+  0% {
+    bottom: -50px;
+  }
+
+  100% {
+    bottom: 0;
+    opacity: 1;
   }
 }
 
