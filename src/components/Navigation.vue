@@ -29,7 +29,7 @@ export default {
   z-index: 2;
   position: fixed;
   width: 100%;
-  padding-right: 4%;
+  padding: $md-pd 4%;
   ul {
     display: flex;
     justify-content: flex-end;
@@ -38,15 +38,28 @@ export default {
     li {
       font-weight: 700;
       cursor: pointer;
-      padding: $md-pd;
+      padding: 0 $md-pd;
       font-size: $title-md;
       transition: all 0.5s ease;
       animation: 1s slideIn;
+      position: relative;
 
-      &:hover {
-        background: linear-gradient(to right, #6c63ff, rgb(0, 204, 255));
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
+      &::after {
+        position: absolute;
+        content: "";
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: #756cff;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.5s;
+      }
+
+      &:hover::after {
+        transform: scaleX(1);
+        transform-origin: left;
       }
 
       &:nth-of-type(2) {
@@ -66,6 +79,12 @@ export default {
 
   100% {
     margin-top: 0;
+  }
+}
+
+@keyframes textShine {
+  to {
+    background-position: 200%;
   }
 }
 </style>
