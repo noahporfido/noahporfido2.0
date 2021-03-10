@@ -6,7 +6,7 @@
         <home></home>
       </div>
       <div class="section">
-        <about></about>
+        <values></values>
       </div>
       <div class="section">Projects ...</div>
     </full-page>
@@ -14,12 +14,12 @@
 </template>
 
 <script>
-import { Home, About } from "@/components/Sections";
+import { Home, Values } from "@/components/Sections";
 import { Navigation } from "@/components";
 
 export default {
   name: "Fullpage",
-  components: { Home, About, Navigation },
+  components: { Home, Values, Navigation },
   data() {
     return {
       options: {
