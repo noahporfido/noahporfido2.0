@@ -2,13 +2,13 @@
   <div class="fullpage-layout-container">
     <navigation></navigation>
     <full-page ref="fullpage" :options="options" id="fullpage">
-      <div class="section">
-        <home></home>
+      <div
+        v-for="(section, index) in options.anchors"
+        :key="index"
+        class="section"
+      >
+        <component :is="section"></component>
       </div>
-      <div class="section">
-        <values></values>
-      </div>
-      <div class="section">Projects ...</div>
     </full-page>
   </div>
 </template>
@@ -25,7 +25,7 @@ export default {
       options: {
         licenseKey: "YOUR_KEY_HERE",
         menu: "#menu",
-        anchors: ["home", "about", "projects"],
+        anchors: ["home", "values"],
         navigation: true,
         navigationPosition: "right",
       },
