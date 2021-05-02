@@ -29,7 +29,7 @@ export default {
 @import "../../assets/styles/_general.scss";
 
 .viewContainer-top {
-  height: 100vh;
+  height: calc(100vh - 80px);
   font-size: 9px;
   display: flex;
   align-items: center;

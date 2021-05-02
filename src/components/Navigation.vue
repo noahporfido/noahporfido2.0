@@ -32,6 +32,8 @@ export default {
   padding: $lg-pd;
   justify-content: space-between;
   position: fixed;
+  top: 0;
+  height: 100px;
 
   h2 {
     width: 5%;

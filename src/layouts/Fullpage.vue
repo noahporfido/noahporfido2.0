@@ -37,7 +37,8 @@ export default {
 <style lang="scss" scoped>
 .fullpage-layout-container {
   .section {
-    margin: 0 4%;
+    margin: 100px 4% 0 4%;
+    height: calc(100vh - 100px);
   }
 }
 </style>
