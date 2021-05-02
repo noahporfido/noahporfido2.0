@@ -6,17 +6,20 @@
         <h2>frontend developer</h2>
       </div>
     </div>
+    <div class="arrow-absolute-container">
+      <div class="arrow-container">
+        <div @click="start" class="arrow"></div>
+        <div @click="start" class="arrow"></div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  created() {
-    console.log(this.$route.hash === "" || "#home");
-  },
   methods: {
     start() {
-      location.href = "#about";
+      location.href = "#values";
     },
   },
 };
@@ -26,39 +29,34 @@ export default {
 @import "../../assets/styles/_general.scss";
 
 .viewContainer-top {
-  height: calc(100vh - 80px);
-  margin: 0 auto;
+  height: 100vh;
   font-size: 9px;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
 
-  .start-tour-container {
+  .arrow-absolute-container {
     position: absolute;
-    bottom: 0;
-    opacity: 0;
-    border-radius: 16px;
-    animation-name: topToBottom;
-    animation-duration: 1s;
-    animation-delay: 2s;
-    animation-fill-mode: forwards;
-
-    h1 {
-      cursor: pointer;
-      font-size: $title-sm;
+    bottom: 50px;
+    .arrow-container {
+      height: 100px;
+      width: 100px;
       position: relative;
-
-      &:hover::after {
-        animation: borderSpin 0.6s;
-        width: 0;
-        content: "";
-        animation-fill-mode: forwards;
-        border-bottom: 1px solid black;
+      .arrow {
+        cursor: pointer;
         position: absolute;
-        bottom: -5px;
-        height: 5px;
-        left: 0;
+        transform: rotate(315deg) translate(-20%, -50%);
+        top: 50%;
+        left: 50%;
+        width: 50px;
+        height: 50px;
+        border-left: 1px solid black;
+        border-bottom: 1px solid black;
+
+        &:nth-of-type(2) {
+          top: 40%;
+        }
       }
     }
   }
@@ -84,13 +82,6 @@ export default {
         animation: slidein 2s;
       }
     }
-  }
-}
-
-@keyframes borderSpin {
-  to {
-    transform: rotate(180deg);
-    width: 100%;
   }
 }
 
