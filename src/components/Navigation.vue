@@ -3,8 +3,8 @@
     v-if="$route.hash && $route.hash !== '#home'"
     class="navigation-container"
   >
+    <h2 class="bold rotate90" @click="scrollToSection('#home')">N</h2>
     <ul>
-      <li class="bold rotate90" @click="scrollToSection('#home')">N</li>
       <li @click="scrollToSection('#values')">Werte</li>
       <li @click="scrollToSection('#timeline')">Werdegang</li>
       <li @click="scrollToSection('#skills')">Skills</li>
@@ -26,12 +26,25 @@ export default {
 @import "../assets/styles/_general.scss";
 
 .navigation-container {
+  z-index: 2;
+  display: flex;
+  width: 100%;
+  padding: $lg-pd;
+  justify-content: space-between;
+  position: fixed;
+
+  h2 {
+    width: 5%;
+    max-width: 50px;
+  }
   ul {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-end;
+    width: 95%;
     align-items: center;
-    height: 80px;
+    max-width: 300px;
     li {
+      padding: 0 $sm-pd;
       cursor: pointer;
       font-size: $title-sm;
     }
